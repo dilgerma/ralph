@@ -1,0 +1,172 @@
+{
+  "id": "3458764656615997335",
+  "status": "Planned",
+  "title": "slice: Create Todo List",
+  "context": "TODO",
+  "sliceType": "STATE_CHANGE",
+  "commands": [
+    {
+      "id": "3458764656615997293",
+      "tags": [],
+      "elementContext": "INTERNAL",
+      "modelContext": "TODO",
+      "context": "INTERNAL",
+      "slice": "slice: Create Todo List",
+      "title": "Create Todo List",
+      "fields": [
+        {
+          "name": "id",
+          "type": "String",
+          "cardinality": "Single",
+          "subfields": [],
+          "generated": true,
+          "idAttribute": true
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "cardinality": "Single",
+          "subfields": [],
+          "idAttribute": false
+        }
+      ],
+      "type": "COMMAND",
+      "description": "",
+      "aggregate": "todo list",
+      "aggregateDependencies": [
+        "todo list"
+      ],
+      "dependencies": [
+        {
+          "id": "3458764656615997217",
+          "type": "OUTBOUND",
+          "title": "Todo List created",
+          "elementType": "EVENT"
+        },
+        {
+          "id": "3458764656615997305",
+          "type": "INBOUND",
+          "title": "screen",
+          "elementType": "SCREEN"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": false,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "3458764656615997217",
+      "tags": [],
+      "elementContext": "INTERNAL",
+      "modelContext": "TODO",
+      "context": "INTERNAL",
+      "slice": "slice: Create Todo List",
+      "title": "Todo List created",
+      "fields": [
+        {
+          "name": "name",
+          "type": "String",
+          "cardinality": "Single",
+          "subfields": [],
+          "idAttribute": false
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "cardinality": "Single",
+          "subfields": [],
+          "idAttribute": true
+        }
+      ],
+      "type": "EVENT",
+      "description": "",
+      "aggregate": "todo list",
+      "aggregateDependencies": [
+        "todo list"
+      ],
+      "dependencies": [
+        {
+          "id": "3458764656615997363",
+          "type": "OUTBOUND",
+          "title": "todo lists",
+          "elementType": "READMODEL"
+        },
+        {
+          "id": "3458764656615997293",
+          "type": "INBOUND",
+          "title": "Create Todo List",
+          "elementType": "COMMAND"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": false,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "readmodels": [],
+  "screens": [
+    {
+      "id": "3458764656615997305",
+      "tags": [],
+      "groupId": "3458764656615997309",
+      "elementContext": "INTERNAL",
+      "modelContext": "TODO",
+      "context": "INTERNAL",
+      "slice": "slice: Create Todo List",
+      "title": "screen",
+      "fields": [
+        {
+          "name": "name",
+          "type": "String",
+          "cardinality": "Single",
+          "subfields": [],
+          "idAttribute": false
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "cardinality": "Single",
+          "subfields": [],
+          "idAttribute": true
+        }
+      ],
+      "type": "SCREEN",
+      "description": "",
+      "aggregate": "todo list",
+      "aggregateDependencies": [
+        "todo list"
+      ],
+      "dependencies": [
+        {
+          "id": "3458764656615997293",
+          "type": "OUTBOUND",
+          "title": "Create Todo List",
+          "elementType": "COMMAND"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": false,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "screenImages": [],
+  "screenLayouts": [],
+  "processors": [],
+  "tables": [],
+  "specifications": [],
+  "actors": [],
+  "aggregates": [
+    "todo list"
+  ]
+}

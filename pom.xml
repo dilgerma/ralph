@@ -8,9 +8,9 @@
         <version>3.5.6</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>de.eventsourcingbook.cart
+    <groupId>de.nebulit
     </groupId>
-    <artifactId>Cart
+    <artifactId>Context
     </artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <properties>
@@ -263,7 +263,7 @@
                     <pluginOptions>
                         <!-- Call instance initializers in the synthetic constructor -->
                         <option>no-arg:invokeInitializers=true</option>
-                        <option>no-arg:annotation=de.eventsourcingbook.cart.common.NoArg
+                        <option>no-arg:annotation=de.nebulit.common.NoArg
                         </option>
                         <option>no-arg:annotation=org.axonframework.spring.stereotype.Saga</option>
                     </pluginOptions>
