@@ -1,0 +1,127 @@
+{
+  "id": "3458764656615997464",
+  "status": "Done",
+  "title": "slice: todo lists",
+  "context": "TODO",
+  "sliceType": "STATE_VIEW",
+  "commands": [],
+  "events": [],
+  "readmodels": [
+    {
+      "id": "3458764656615997363",
+      "tags": [],
+      "elementContext": "INTERNAL",
+      "modelContext": "TODO",
+      "context": "INTERNAL",
+      "slice": "slice: todo lists",
+      "title": "todo lists",
+      "fields": [
+        {
+          "name": "id",
+          "type": "String",
+          "cardinality": "Single",
+          "subfields": [],
+          "idAttribute": true
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "cardinality": "Single",
+          "subfields": [],
+          "idAttribute": false
+        }
+      ],
+      "type": "READMODEL",
+      "description": "",
+      "aggregate": "todo list",
+      "aggregateDependencies": [
+        "todo list"
+      ],
+      "dependencies": [
+        {
+          "id": "3458764656615997379",
+          "type": "OUTBOUND",
+          "title": "screen",
+          "elementType": "SCREEN"
+        },
+        {
+          "id": "3458764656615997217",
+          "type": "INBOUND",
+          "title": "Todo List created",
+          "elementType": "EVENT"
+        }
+      ],
+      "listElement": true,
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": false,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "screens": [
+    {
+      "id": "3458764656615997379",
+      "tags": [],
+      "groupId": "3458764656615997381",
+      "elementContext": "INTERNAL",
+      "modelContext": "TODO",
+      "context": "INTERNAL",
+      "slice": "slice: todo lists",
+      "title": "screen",
+      "fields": [
+        {
+          "name": "name",
+          "type": "String",
+          "cardinality": "Single",
+          "subfields": [],
+          "idAttribute": false
+        },
+        {
+          "name": "listid",
+          "mapping": "id",
+          "type": "String",
+          "cardinality": "Single",
+          "subfields": [],
+          "idAttribute": false
+        }
+      ],
+      "type": "SCREEN",
+      "description": "",
+      "aggregate": "todo list",
+      "aggregateDependencies": [
+        "todo list"
+      ],
+      "dependencies": [
+        {
+          "id": "3458764656615997792",
+          "type": "OUTBOUND",
+          "title": "Add Todo Item",
+          "elementType": "COMMAND"
+        },
+        {
+          "id": "3458764656615997363",
+          "type": "INBOUND",
+          "title": "todo lists",
+          "elementType": "READMODEL"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": false,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "screenImages": [],
+  "screenLayouts": [],
+  "processors": [],
+  "tables": [],
+  "specifications": [],
+  "actors": [],
+  "aggregates": [
+    "todo list"
+  ]
+}
