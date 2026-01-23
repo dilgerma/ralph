@@ -1,25 +1,26 @@
 {
-  "id": "3458764656615997335",
-  "status": "Done",
-  "title": "slice: Create Todo List",
+  "id": "3458764656616164868",
+  "status": "Planned",
+  "title": "slice: todo items",
   "context": "TODO",
-  "sliceType": "STATE_CHANGE",
-  "commands": [
+  "sliceType": "STATE_VIEW",
+  "commands": [],
+  "events": [],
+  "readmodels": [
     {
-      "id": "3458764656615997293",
+      "id": "3458764656616164183",
       "tags": [],
       "elementContext": "INTERNAL",
       "modelContext": "TODO",
       "context": "INTERNAL",
-      "slice": "slice: Create Todo List",
-      "title": "Create Todo List",
+      "slice": "slice: todo items",
+      "title": "todo items",
       "fields": [
         {
           "name": "id",
           "type": "String",
           "cardinality": "Single",
           "subfields": [],
-          "generated": true,
           "idAttribute": true
         },
         {
@@ -28,9 +29,16 @@
           "cardinality": "Single",
           "subfields": [],
           "idAttribute": false
+        },
+        {
+          "name": "listid",
+          "type": "String",
+          "cardinality": "Single",
+          "subfields": [],
+          "idAttribute": false
         }
       ],
-      "type": "COMMAND",
+      "type": "READMODEL",
       "description": "",
       "aggregate": "todo list",
       "aggregateDependencies": [
@@ -38,71 +46,19 @@
       ],
       "dependencies": [
         {
-          "id": "3458764656615997217",
+          "id": "3458764656616164595",
           "type": "OUTBOUND",
-          "title": "Todo List created",
-          "elementType": "EVENT"
-        },
-        {
-          "id": "3458764656615997305",
-          "type": "INBOUND",
           "title": "screen",
           "elementType": "SCREEN"
-        }
-      ],
-      "createsAggregate": false,
-      "triggers": [],
-      "sketched": false,
-      "prototype": {
-        "activeByDefault": false
-      }
-    }
-  ],
-  "events": [
-    {
-      "id": "3458764656615997217",
-      "tags": [],
-      "elementContext": "INTERNAL",
-      "modelContext": "TODO",
-      "context": "INTERNAL",
-      "slice": "slice: Create Todo List",
-      "title": "Todo List created",
-      "fields": [
-        {
-          "name": "name",
-          "type": "String",
-          "cardinality": "Single",
-          "subfields": [],
-          "idAttribute": false
         },
         {
-          "name": "id",
-          "type": "String",
-          "cardinality": "Single",
-          "subfields": [],
-          "idAttribute": true
-        }
-      ],
-      "type": "EVENT",
-      "description": "",
-      "aggregate": "todo list",
-      "aggregateDependencies": [
-        "todo list"
-      ],
-      "dependencies": [
-        {
-          "id": "3458764656615997363",
-          "type": "OUTBOUND",
-          "title": "todo lists",
-          "elementType": "READMODEL"
-        },
-        {
-          "id": "3458764656615997293",
+          "id": "3458764656615997520",
           "type": "INBOUND",
-          "title": "Create Todo List",
-          "elementType": "COMMAND"
+          "title": "Add Item",
+          "elementType": "EVENT"
         }
       ],
+      "listElement": true,
       "createsAggregate": false,
       "triggers": [],
       "sketched": false,
@@ -111,16 +67,15 @@
       }
     }
   ],
-  "readmodels": [],
   "screens": [
     {
-      "id": "3458764656615997305",
+      "id": "3458764656616164595",
       "tags": [],
-      "groupId": "3458764656615997309",
+      "groupId": "3458764656616164598",
       "elementContext": "INTERNAL",
       "modelContext": "TODO",
       "context": "INTERNAL",
-      "slice": "slice: Create Todo List",
+      "slice": "slice: todo items",
       "title": "screen",
       "fields": [
         {
@@ -131,11 +86,12 @@
           "idAttribute": false
         },
         {
-          "name": "id",
+          "name": "listid",
+          "mapping": "id",
           "type": "String",
           "cardinality": "Single",
           "subfields": [],
-          "idAttribute": true
+          "idAttribute": false
         }
       ],
       "type": "SCREEN",
@@ -146,10 +102,10 @@
       ],
       "dependencies": [
         {
-          "id": "3458764656615997293",
-          "type": "OUTBOUND",
-          "title": "Create Todo List",
-          "elementType": "COMMAND"
+          "id": "3458764656616164183",
+          "type": "INBOUND",
+          "title": "todo items",
+          "elementType": "READMODEL"
         }
       ],
       "createsAggregate": false,

@@ -7,8 +7,6 @@ Ralph is an autonomous AI agent loop that runs Amp repeatedly until all PRD item
 ## Commands
 
 ```bash
-
-# Run Ralph (from your project that has prd.json)
 ./ralph.sh [max_iterations]
 ```
 

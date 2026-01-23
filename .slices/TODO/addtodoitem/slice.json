@@ -1,0 +1,510 @@
+{
+  "id": "3458764656616164146",
+  "status": "Planned",
+  "title": "slice: Add Todo Item",
+  "context": "TODO",
+  "sliceType": "STATE_CHANGE",
+  "commands": [
+    {
+      "id": "3458764656615997792",
+      "tags": [],
+      "elementContext": "INTERNAL",
+      "modelContext": "TODO",
+      "context": "INTERNAL",
+      "slice": "slice: Add Todo Item",
+      "title": "Add Todo Item",
+      "fields": [
+        {
+          "name": "name",
+          "type": "String",
+          "cardinality": "Single",
+          "subfields": [],
+          "idAttribute": false
+        },
+        {
+          "name": "listId",
+          "type": "String",
+          "cardinality": "Single",
+          "subfields": [],
+          "idAttribute": false
+        },
+        {
+          "name": "id",
+          "generated": true,
+          "type": "String",
+          "cardinality": "Single",
+          "subfields": [],
+          "mapping": "id",
+          "idAttribute": true
+        }
+      ],
+      "type": "COMMAND",
+      "description": "",
+      "aggregate": "todo list",
+      "aggregateDependencies": [
+        "todo list"
+      ],
+      "dependencies": [
+        {
+          "id": "3458764656615997520",
+          "type": "OUTBOUND",
+          "title": "Add Item",
+          "elementType": "EVENT"
+        },
+        {
+          "id": "3458764656615997379",
+          "type": "INBOUND",
+          "title": "screen",
+          "elementType": "SCREEN"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": false,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "3458764656615997520",
+      "tags": [],
+      "elementContext": "INTERNAL",
+      "modelContext": "TODO",
+      "context": "INTERNAL",
+      "slice": "slice: Add Todo Item",
+      "title": "Add Item",
+      "fields": [
+        {
+          "name": "name",
+          "type": "String",
+          "cardinality": "Single",
+          "subfields": [],
+          "idAttribute": false
+        },
+        {
+          "name": "listId",
+          "type": "String",
+          "cardinality": "Single",
+          "subfields": [],
+          "idAttribute": false
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "cardinality": "Single",
+          "subfields": [],
+          "idAttribute": true
+        }
+      ],
+      "type": "EVENT",
+      "description": "",
+      "aggregate": "todo list",
+      "aggregateDependencies": [
+        "todo list"
+      ],
+      "dependencies": [
+        {
+          "id": "3458764656616164183",
+          "type": "OUTBOUND",
+          "title": "todo items",
+          "elementType": "READMODEL"
+        },
+        {
+          "id": "3458764656615997792",
+          "type": "INBOUND",
+          "title": "Add Todo Item",
+          "elementType": "COMMAND"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": false,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "readmodels": [],
+  "screens": [
+    {
+      "id": "3458764656615997379",
+      "tags": [],
+      "groupId": "3458764656615997381",
+      "elementContext": "INTERNAL",
+      "modelContext": "TODO",
+      "context": "INTERNAL",
+      "slice": "slice: Add Todo Item",
+      "title": "screen",
+      "fields": [
+        {
+          "name": "name",
+          "type": "String",
+          "cardinality": "Single",
+          "subfields": [],
+          "idAttribute": false
+        },
+        {
+          "name": "listid",
+          "mapping": "id",
+          "type": "String",
+          "cardinality": "Single",
+          "subfields": [],
+          "idAttribute": false
+        }
+      ],
+      "type": "SCREEN",
+      "description": "",
+      "aggregate": "todo list",
+      "aggregateDependencies": [
+        "todo list"
+      ],
+      "dependencies": [
+        {
+          "id": "3458764656615997792",
+          "type": "OUTBOUND",
+          "title": "Add Todo Item",
+          "elementType": "COMMAND"
+        },
+        {
+          "id": "3458764656615997363",
+          "type": "INBOUND",
+          "title": "todo lists",
+          "elementType": "READMODEL"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": false,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "screenImages": [],
+  "screenLayouts": [],
+  "processors": [],
+  "tables": [],
+  "specifications": [
+    {
+      "vertical": false,
+      "id": "3458764656616236755",
+      "sliceName": "slice: Add Todo Item",
+      "title": "spec: Add Todo Item - max 3 items",
+      "given": [
+        {
+          "title": "Todo List created",
+          "tags": [],
+          "id": "3458764656616236763",
+          "index": 0,
+          "specRow": -1,
+          "type": "SPEC_EVENT",
+          "fields": [
+            {
+              "name": "name",
+              "type": "String",
+              "cardinality": "Single",
+              "subfields": [],
+              "example": ""
+            },
+            {
+              "name": "id",
+              "type": "String",
+              "cardinality": "Single",
+              "subfields": [],
+              "example": ""
+            }
+          ],
+          "linkedId": "3458764656615997217"
+        },
+        {
+          "title": "Add Item",
+          "tags": [],
+          "id": "3458764656616236776",
+          "index": 1,
+          "specRow": -1,
+          "type": "SPEC_EVENT",
+          "fields": [
+            {
+              "name": "name",
+              "type": "String",
+              "cardinality": "Single",
+              "subfields": [],
+              "example": ""
+            },
+            {
+              "name": "listId",
+              "type": "String",
+              "cardinality": "Single",
+              "subfields": [],
+              "example": ""
+            },
+            {
+              "name": "id",
+              "type": "String",
+              "cardinality": "Single",
+              "subfields": [],
+              "example": ""
+            }
+          ],
+          "linkedId": "3458764656615997520"
+        },
+        {
+          "title": "Add Item",
+          "tags": [],
+          "id": "3458764656616236782",
+          "index": 2,
+          "specRow": -1,
+          "type": "SPEC_EVENT",
+          "fields": [
+            {
+              "name": "name",
+              "type": "String",
+              "cardinality": "Single",
+              "subfields": [],
+              "example": ""
+            },
+            {
+              "name": "listId",
+              "type": "String",
+              "cardinality": "Single",
+              "subfields": [],
+              "example": ""
+            },
+            {
+              "name": "id",
+              "type": "String",
+              "cardinality": "Single",
+              "subfields": [],
+              "example": ""
+            }
+          ],
+          "linkedId": "3458764656615997520"
+        },
+        {
+          "title": "Add Item",
+          "tags": [],
+          "id": "3458764656616236784",
+          "index": 3,
+          "specRow": -1,
+          "type": "SPEC_EVENT",
+          "fields": [
+            {
+              "name": "name",
+              "type": "String",
+              "cardinality": "Single",
+              "subfields": [],
+              "example": ""
+            },
+            {
+              "name": "listId",
+              "type": "String",
+              "cardinality": "Single",
+              "subfields": [],
+              "example": ""
+            },
+            {
+              "name": "id",
+              "type": "String",
+              "cardinality": "Single",
+              "subfields": [],
+              "example": ""
+            }
+          ],
+          "linkedId": "3458764656615997520"
+        }
+      ],
+      "when": [
+        {
+          "title": "Add Todo Item",
+          "tags": [],
+          "id": "3458764656616236756",
+          "index": 0,
+          "specRow": -1,
+          "type": "SPEC_COMMAND",
+          "fields": [
+            {
+              "name": "name",
+              "type": "String",
+              "cardinality": "Single",
+              "subfields": [],
+              "example": ""
+            },
+            {
+              "name": "listId",
+              "type": "String",
+              "cardinality": "Single",
+              "subfields": [],
+              "example": ""
+            },
+            {
+              "name": "id",
+              "generated": true,
+              "type": "String",
+              "cardinality": "Single",
+              "subfields": [],
+              "mapping": "id",
+              "example": ""
+            }
+          ],
+          "linkedId": "3458764656615997792"
+        }
+      ],
+      "then": [
+        {
+          "title": "only 3 items allowed",
+          "tags": [],
+          "id": "3458764656616236762",
+          "index": 0,
+          "specRow": -1,
+          "type": "SPEC_ERROR",
+          "fields": []
+        }
+      ],
+      "comments": [],
+      "linkedId": "3458764656616164146"
+    },
+    {
+      "vertical": false,
+      "id": "3458764656616353079",
+      "sliceName": "slice: Add Todo Item",
+      "title": "spec: Add Todo Item - scenario",
+      "given": [
+        {
+          "title": "Todo List created",
+          "tags": [],
+          "id": "3458764656616353085",
+          "index": 0,
+          "specRow": -1,
+          "type": "SPEC_EVENT",
+          "fields": [
+            {
+              "name": "name",
+              "type": "String",
+              "cardinality": "Single",
+              "subfields": [],
+              "example": ""
+            },
+            {
+              "name": "id",
+              "type": "String",
+              "cardinality": "Single",
+              "subfields": [],
+              "example": ""
+            }
+          ],
+          "linkedId": "3458764656615997217"
+        },
+        {
+          "title": "Add Item",
+          "tags": [],
+          "id": "3458764656616353089",
+          "index": 1,
+          "specRow": -1,
+          "type": "SPEC_EVENT",
+          "fields": [
+            {
+              "name": "name",
+              "type": "String",
+              "cardinality": "Single",
+              "subfields": [],
+              "example": ""
+            },
+            {
+              "name": "listId",
+              "type": "String",
+              "cardinality": "Single",
+              "subfields": [],
+              "example": ""
+            },
+            {
+              "name": "id",
+              "type": "String",
+              "cardinality": "Single",
+              "subfields": [],
+              "example": ""
+            }
+          ],
+          "linkedId": "3458764656615997520"
+        }
+      ],
+      "when": [
+        {
+          "title": "Add Todo Item",
+          "tags": [],
+          "id": "3458764656616353081",
+          "index": 0,
+          "specRow": -1,
+          "type": "SPEC_COMMAND",
+          "fields": [
+            {
+              "name": "name",
+              "type": "String",
+              "cardinality": "Single",
+              "subfields": [],
+              "example": ""
+            },
+            {
+              "name": "listId",
+              "type": "String",
+              "cardinality": "Single",
+              "subfields": [],
+              "example": ""
+            },
+            {
+              "name": "id",
+              "generated": true,
+              "type": "String",
+              "cardinality": "Single",
+              "subfields": [],
+              "mapping": "id",
+              "example": ""
+            }
+          ],
+          "linkedId": "3458764656615997792"
+        }
+      ],
+      "then": [
+        {
+          "title": "Add Item",
+          "tags": [],
+          "id": "3458764656616353082",
+          "index": 0,
+          "specRow": -1,
+          "type": "SPEC_EVENT",
+          "fields": [
+            {
+              "name": "name",
+              "type": "String",
+              "cardinality": "Single",
+              "subfields": [],
+              "example": ""
+            },
+            {
+              "name": "listId",
+              "type": "String",
+              "cardinality": "Single",
+              "subfields": [],
+              "example": ""
+            },
+            {
+              "name": "id",
+              "type": "String",
+              "cardinality": "Single",
+              "subfields": [],
+              "example": ""
+            }
+          ],
+          "linkedId": "3458764656615997520"
+        }
+      ],
+      "comments": [],
+      "linkedId": "3458764656616164146"
+    }
+  ],
+  "actors": [],
+  "aggregates": [
+    "todo list"
+  ]
+}
